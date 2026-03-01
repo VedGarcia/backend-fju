@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+npx gitleaks-secret-scanner protect --staged || {
+  echo ""
+  echo "❌ Error: Gitleaks encontró posibles contraseñas o secretos en el código."
+  echo "Por favor, elimínalos antes de hacer commit o añade la excepción correspondiente."
+  exit 1
+}
+
+npx lint-staged

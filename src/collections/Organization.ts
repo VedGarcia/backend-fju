@@ -1,25 +1,27 @@
 import type { CollectionConfig } from 'payload'
 
-export const Users: CollectionConfig = {
-  slug: 'users',
+export const Organization: CollectionConfig = {
+  slug: 'organization',
   admin: {
-    useAsTitle: 'username',
+    useAsTitle: 'name',
   },
-  auth: true,
   fields: [
     {
-      name: 'username',
+      name: 'name',
       type: 'text',
       required: true,
-      unique: true,
     },
     {
-      name: 'avatar',
+      name: 'logo',
       type: 'upload',
       relationTo: 'media',
     },
     {
-      name: 'bio',
+      name: 'description',
+      type: 'text',
+    },
+    {
+      name: 'link',
       type: 'text',
     },
   ],
