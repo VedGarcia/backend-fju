@@ -5,6 +5,9 @@ export const Banners: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
   },
+  access: {
+    read: () => true
+  },
   fields: [
     {
       name: 'title',
@@ -15,15 +18,17 @@ export const Banners: CollectionConfig = {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
+      required: true,
     },
     {
       name: 'link',
       type: 'text',
+      required: true,
     },
     {
-      name: 'position',
-      type: 'text',
-      defaultValue: 'top',
+      name: 'active',
+      type: 'checkbox',
+      defaultValue: true,
     },
   ],
 }

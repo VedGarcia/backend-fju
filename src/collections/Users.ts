@@ -5,7 +5,13 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'username',
   },
-  auth: true,
+  auth: {
+    loginWithUsername: {
+      allowEmailLogin: false,
+      requireEmail: false,
+      requireUsername: true,
+    },
+  },
   fields: [
     {
       name: 'username',
@@ -13,14 +19,6 @@ export const Users: CollectionConfig = {
       required: true,
       unique: true,
     },
-    {
-      name: 'avatar',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    {
-      name: 'bio',
-      type: 'text',
-    },
+
   ],
 }
